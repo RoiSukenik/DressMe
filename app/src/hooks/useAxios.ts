@@ -26,9 +26,10 @@ const useAxios = ({ url , method , data = null, headers = null }:AxiosRequestCon
     };
 
     useEffect(() => {
-        fetchData();
+        fetchData()
+        
     }, [method, url, data, headers]);
-
+    
     return { response, error, loading };
 };
 
