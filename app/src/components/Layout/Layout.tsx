@@ -7,7 +7,6 @@ const Layout:React.FC<{}> =({children}) => {
         <View>
             <StatusBar/>
             {children}
-            
         </View>
     )
 }
