@@ -19,15 +19,14 @@ export default Title
 
 const styles = StyleSheet.create({
     continer:{
-        flexWrap:'nowrap',
-        backgroundColor:'#000'
+        backgroundColor:'#000',
     },
     title:{
-        alignContent:"center",
-        textAlign:"center",
+        paddingHorizontal:10,
+        paddingVertical:10,
         color: '#fff',
         fontSize:48,
-        fontFamily: 'RampartOne',
+        fontFamily: 'RampartOne-Regular',
         paddingBottom:10,
     }
 })

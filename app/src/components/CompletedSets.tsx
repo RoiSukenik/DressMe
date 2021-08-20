@@ -18,15 +18,21 @@ export default CompletedSets
 
 const styles = StyleSheet.create({
     container:{
-        flexWrap:"nowrap",
-        flexDirection:'row',
+        flex:1,
     },
     header:{
+        paddingTop:10,
+        paddingHorizontal:5,
         textAlign:'center',
-        fontSize:20
+        fontSize:20,
+        fontFamily:'JosefinSans-Italic-VariableFont_wght',
+        fontWeight:'bold'
     },
     subHeader:{
+        paddingTop:10,
         textAlign:'center',
-        fontSize:16,
+        fontFamily:'JosefinSans-Italic-VariableFont_wght',
+        fontSize:20,
+        fontWeight:'bold'
     }
 })

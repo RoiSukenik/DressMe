@@ -1,7 +1,4 @@
-import ItemTabNavigator  from "./ItemNavigator";
-import RootDrawerNavigator from "./RootNavigator";
+export *  from "./ItemNavigator";
+// export * from "./RootDrawer";
 
-export {
-    ItemTabNavigator as ItemNav,
-    RootDrawerNavigator as RootNav,
-}
+

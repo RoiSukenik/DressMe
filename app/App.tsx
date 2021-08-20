@@ -3,6 +3,7 @@ import {
    SafeAreaView,
    StatusBar,
    useColorScheme,
+   View,
 } from 'react-native';
 
 import {
@@ -26,13 +27,10 @@ const App = () => {
   // })
   
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <Home/>
-      {/* <Layout>
+      <Layout>
         <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-        
-      </Layout> */}
-    </SafeAreaView>
+        <Home/>
+      </Layout>
   );
 };
 
