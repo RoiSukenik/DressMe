@@ -3,8 +3,8 @@ import { View, Text } from 'react-native'
 
 const Pants = () => {
     return (
-        <View>
-            <Text></Text>
+        <View>       
+         <Text></Text>
         </View>
     )
 }

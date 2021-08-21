@@ -1,3 +1,3 @@
 
-export {default as Shoe} from "./Shoe";
+export {default as ShoeList} from "./ShoeList";
 

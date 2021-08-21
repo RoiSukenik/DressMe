@@ -20,7 +20,7 @@ const useAxios = ({ url , method , data = null, headers = null }:AxiosRequestCon
             headers:JSON.parse(headers),
             data: JSON.parse(data)})
         if(response.status !== 200) {setError(response.statusText)}
-        setResponse(response.data);
+        setResponse(response.data.results);
         setloading(false);
 
     };
