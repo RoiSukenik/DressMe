@@ -11,7 +11,8 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import Layout from './src/components/Layout/Layout';
 import { useAxios } from './src/hooks';
-import Home from './src/pages/Home';
+import {Home} from './src/pages/Home';
+import RootStore from './src/store'
 
 
 const App = () => {

@@ -2,7 +2,7 @@ import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
 interface Props{
-    completed:number;
+    completed:Number;
 }
 
 const CompletedSets:React.FC<Props> = ({completed}) => {
@@ -19,6 +19,7 @@ export default CompletedSets
 const styles = StyleSheet.create({
     container:{
         flex:1,
+        backgroundColor:'#484848'
     },
     header:{
         paddingTop:10,

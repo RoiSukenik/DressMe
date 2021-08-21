@@ -19,7 +19,7 @@ export default Title
 
 const styles = StyleSheet.create({
     continer:{
-        backgroundColor:'#000',
+        backgroundColor:'#000000',
     },
     title:{
         paddingHorizontal:10,
