@@ -11,9 +11,21 @@ class RootStore{
 
 }
 interface Set{
-    pants:string;
-    shirt:string;
-    shoes:string;
+    pants:{
+        id:string;
+        size:string;
+        color:string;
+    };
+    shirt:{
+        id:string;
+        size:string;
+        color:string;
+    };
+    shoes:{
+        id:string;
+        size:string;
+        color:string;
+    };
 }
 class SetStore{
     completedSets: number= 0
@@ -33,14 +45,20 @@ class SetStore{
     addSet(currentSet:Set ){
         this.sets.push(currentSet)
     }
-    addShirt(id:string){
-        this.currentSet.shirt = id;
+    addShirt(id:string,color:string,size:string){
+        this.currentSet.shirt.id = id;
+        this.currentSet.shirt.color = color;
+        this.currentSet.shirt.size = size;
     }
-    addPants(id:string){
-        this.currentSet.pants = id;
+    addPants(id:string,color:string,size:string){
+        this.currentSet.pants.id = id;
+        this.currentSet.pants.color = color;
+        this.currentSet.pants.size = size;
     }
-    addShoes(id:string){
-        this.currentSet.shoes = id;
+    addShoe(id:string,color:string,size:string){
+        this.currentSet.shoes.id = id;
+        this.currentSet.shoes.color = color;
+        this.currentSet.shoes.size = size;
     }
     
 }
