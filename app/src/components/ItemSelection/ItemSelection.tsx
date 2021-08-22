@@ -1,7 +1,8 @@
 import { observer } from 'mobx-react'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { StyleSheet, View } from 'react-native'
 import { List } from 'react-native-paper'
+import { RootStoreContext } from '../../../App'
 
 
 type Props = {
@@ -9,24 +10,28 @@ type Props = {
     Brand:string,
     Colors:Array<string>,
     Sizes:Array<number>,
-    Name:string
+    Name:string,
+    SaveId:Function;
+    SaveColor:Function;
+    SaveSize:Function;
+    
+
 }
 
-const ItemSelection:React.FC<Props> = observer(({Id,Brand,Colors, Sizes , Name}) => {
+const ItemSelection:React.FC<Props> = observer(({Id,Brand,Colors, Sizes , Name,SaveId,SaveColor,SaveSize}) => {
     
     const [expanded,setExpanded] = useState(false)
     const [expandedColors,setExpandedColors] = useState(false)
     const [expandedSizes,setExpandedSizes] = useState(false)
-    const [size,setSize] = useState("");
-    const [color,setColor] = useState("")
-    useEffect(()=>{
 
-    },[size,color])
-    return (
+   return (
             <List.Accordion
             title={Name}
             expanded={expanded}
-            onPress={()=>setExpanded(!expanded)}
+            onPress={()=>{
+                SaveId(Id);
+                setExpanded(!expanded)
+            }}
             id={Id}
            >    
             <List.Subheader>Brand Name: {Brand}</List.Subheader>
@@ -39,7 +44,7 @@ const ItemSelection:React.FC<Props> = observer(({Id,Brand,Colors, Sizes , Name})
                 >
                 {
                     Colors.map((color,index)=>(
-                        <List.Subheader  key={index}  onPress={()=>{setColor(color);}}>
+                        <List.Subheader  key={index}  onPress={()=>{SaveColor(color);}}>
                            {color} 
                         </List.Subheader>
                     ))
@@ -48,12 +53,12 @@ const ItemSelection:React.FC<Props> = observer(({Id,Brand,Colors, Sizes , Name})
                 <List.Accordion
                     title="Avilable Sizes"
                     expanded={expandedSizes}
-                    onPress={()=>setExpandedColors(!expandedSizes)}
+                    onPress={()=>setExpandedSizes(!expandedSizes)}
                     id={`${Id}Sizes`}
                 >
                 {
                     Sizes.map((size,index)=>(
-                        <List.Subheader  key={index} onPress={()=>{setSize(size.toString());}}>
+                        <List.Subheader  key={index} onPress={()=>{SaveSize(size.toString());}}>
                             {size}
                         </List.Subheader>
                     ))
@@ -66,7 +71,4 @@ const ItemSelection:React.FC<Props> = observer(({Id,Brand,Colors, Sizes , Name})
 
 export default ItemSelection
 
-const styles = StyleSheet.create({
-    Item:{
-    }
-})
+

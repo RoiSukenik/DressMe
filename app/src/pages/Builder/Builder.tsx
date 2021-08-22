@@ -11,14 +11,14 @@ import { DrawerNavigatorParams } from '../../interfaces';
 import { DrawerNavigationProp } from '@react-navigation/drawer';
 
 
-type StartScreenRouteProp = RouteProp<DrawerNavigatorParams,'Start'>;
-type StatrtScreenNavigationProp = DrawerNavigationProp<DrawerNavigatorParams,'Start'>;
+type BuilderScreenRouteProp = RouteProp<DrawerNavigatorParams,'Builder'>;
+type BuilderScreenNavigationProp = DrawerNavigationProp<DrawerNavigatorParams,'Builder'>;
 type Props = {
-    route: StartScreenRouteProp;
-    navigation: StatrtScreenNavigationProp;
+    route: BuilderScreenRouteProp;
+    navigation: BuilderScreenNavigationProp;
 };
 
-const Start=observer(({route,navigation}:Props)=>{
+const Builder=observer(({route,navigation}:Props)=>{
 
   let {setStore}  = useContext(RootStoreContext);
 
@@ -68,7 +68,7 @@ const Start=observer(({route,navigation}:Props)=>{
     );
   });
 
-export default Start;
+export default Builder;
 const styles = StyleSheet.create({
     continer:{
         flex:1,

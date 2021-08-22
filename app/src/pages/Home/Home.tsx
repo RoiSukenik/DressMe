@@ -3,14 +3,17 @@ import { RouteProp } from '@react-navigation/native';
 import { observer } from 'mobx-react';
 import React, { useContext } from 'react'
 import { ActivityIndicator, StyleSheet, View } from 'react-native'
+import { Icon } from 'react-native-elements';
 import { Paragraph } from 'react-native-paper';
+import { PantsList, ShirtList, ShoeList } from '..';
 import { RootStoreContext } from '../../../App';
 import { CompletedSets } from '../../components';
 import { Title } from '../../components/Title';
 import { DrawerNavigatorParams } from '../../interfaces';
+import { ItemTabNavigator, TabNavigator } from '../../navigations';
 
-type HomeScreenRouteProp = RouteProp<DrawerNavigatorParams,'Start'>;
-type HomeScreenNavigationProp = DrawerNavigationProp<DrawerNavigatorParams,'Start'>;
+type HomeScreenRouteProp = RouteProp<DrawerNavigatorParams,'Home'>;
+type HomeScreenNavigationProp = DrawerNavigationProp<DrawerNavigatorParams,'Home'>;
 type Props = {
     route: HomeScreenRouteProp;
     navigation: HomeScreenNavigationProp;
@@ -35,6 +38,44 @@ const Home = observer(({route,navigation,loading}:Props) => {
         <Paragraph style={styles.paragraph}>
           {"This app will allow you to build your own custom set of cloths to wear!\n All based on what you like most!\n Feel like Adidas? Just type it and we will find it for you!\n So just use swipe left, and start building!"}
         </Paragraph>  
+        <ItemTabNavigator>
+              <TabNavigator.Screen 
+                name="ShoeList" 
+                component={ShoeList} 
+                options={{
+                    title: 'Choose Your Shoe!',
+                    headerTitleStyle:{ textAlign: 'center'},
+                    tabBarLabel: 'Shoe',
+                    tabBarIcon: ({size,color}) => (
+                      <Icon name="shoe-prints" size={size} color={color}/>
+                    ),
+                  }}   
+              />
+              <TabNavigator.Screen 
+                name="PantsList" 
+                component={PantsList}
+                options={{
+                  title: 'Choose Your Pants!',
+                  headerTitleStyle:{ textAlign: 'center'},
+                  tabBarLabel: 'Shoe',
+                  tabBarIcon: ({size,color}) => (
+                    <Icon name="shoe-prints" size={size} color={color}/>
+                  ),
+                }}   
+              />
+              <TabNavigator.Screen 
+                name="ShirtList" 
+                component={ShirtList}
+                options={{
+                    title: 'Choose Your Shirt!',
+                    headerTitleStyle:{ textAlign: 'center'},
+                    tabBarLabel: 'Shirt',
+                    tabBarIcon: ({size,color}) => (
+                      <Icon name="tshirt" size={size} color={color}/>
+                    ),
+                  }}   
+              />
+              </ItemTabNavigator>  
     </View>
   );
 }});

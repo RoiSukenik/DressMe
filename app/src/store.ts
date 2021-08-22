@@ -45,19 +45,31 @@ class SetStore{
     addSet(currentSet:Set ){
         this.sets.push(currentSet)
     }
-    addShirt(id:string,color:string,size:string){
+    addShirtId(id:string){
         this.currentSet.shirt.id = id;
+    }
+    addShirtColor(color:string){
         this.currentSet.shirt.color = color;
+    }
+    addShirtSize(size:string){
         this.currentSet.shirt.size = size;
     }
-    addPants(id:string,color:string,size:string){
+    addPantsId(id:string){
         this.currentSet.pants.id = id;
+    }
+    addPantsColor(color:string){
         this.currentSet.pants.color = color;
+    }
+    addPantsSize(size:string){
         this.currentSet.pants.size = size;
     }
-    addShoe(id:string,color:string,size:string){
+    addShoesId(id:string){
         this.currentSet.shoes.id = id;
+    }
+    addShoesColor(color:string){
         this.currentSet.shoes.color = color;
+    }
+    addShoesSize(size:string){
         this.currentSet.shoes.size = size;
     }
     

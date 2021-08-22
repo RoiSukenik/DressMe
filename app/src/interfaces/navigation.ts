@@ -16,7 +16,7 @@ type TabNavigatorParams ={
 
 type DrawerNavigatorParams ={
     Home:undefined;
-    Start:undefined;
+    Builder:undefined;
     
 }
 export type {ResponseObject, TabNavigatorParams, DrawerNavigatorParams}

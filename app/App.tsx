@@ -8,7 +8,7 @@ import Layout from './src/components/Layout/Layout';
 import { useAxios } from './src/hooks';
 import RootDrawerNavigator,{ RootDrawerNav} from './src/navigations/RootDrawerNavigator';
 
-import { Home, Start } from './src/pages';
+import { Home, Builder } from './src/pages';
 
 
 import {RootStore} from './src/store';
@@ -39,8 +39,8 @@ const App = observer(() => {
                 name="Home" 
                 component={Home}/>
               <RootDrawerNav.Screen 
-                name="Start" 
-                component={Start}
+                name="Builder" 
+                component={Builder}
                 options={
                   {
                     drawerLabel:"Set Builder!"

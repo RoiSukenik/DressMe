@@ -1,5 +1,5 @@
 import {Home} from './Home'
-import {Start} from './Start'
+import {Builder} from './Builder'
 import { ShoeList } from './Shoe'
 import {PantsList}from './Pants'
 import { ShirtList } from './Shirt'
@@ -9,5 +9,5 @@ export {
     PantsList,
     ShoeList,
     ShirtList,
-    Start,
+    Builder,
 }
