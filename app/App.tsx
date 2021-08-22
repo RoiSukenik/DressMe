@@ -35,8 +35,18 @@ const App = observer(() => {
         <RootStoreContext.Provider value= {rootStore}>
           <NavigationContainer>
             <RootDrawerNavigator>
-              <RootDrawerNav.Screen name="Home" component={Home}/>
-              <RootDrawerNav.Screen name="Start" component={Start}/>
+              <RootDrawerNav.Screen 
+                name="Home" 
+                component={Home}/>
+              <RootDrawerNav.Screen 
+                name="Start" 
+                component={Start}
+                options={
+                  {
+                    drawerLabel:"Set Builder!"
+                  }
+                }
+              />
             </RootDrawerNavigator>
           </NavigationContainer>
         </RootStoreContext.Provider>

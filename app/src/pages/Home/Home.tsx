@@ -3,6 +3,7 @@ import { RouteProp } from '@react-navigation/native';
 import { observer } from 'mobx-react';
 import React, { useContext } from 'react'
 import { ActivityIndicator, StyleSheet, View } from 'react-native'
+import { Paragraph } from 'react-native-paper';
 import { RootStoreContext } from '../../../App';
 import { CompletedSets } from '../../components';
 import { Title } from '../../components/Title';
@@ -30,7 +31,10 @@ const Home = observer(({route,navigation,loading}:Props) => {
   return (
     <View style={styles.continer}>
         <Title text={"Dress Me Up!"}/>
-        <CompletedSets  completed={setStore.completedSets}/>    
+        <CompletedSets  completed={setStore.completedSets}/> 
+        <Paragraph style={styles.paragraph}>
+          {"This app will allow you to build your own custom set of cloths to wear!\n All based on what you like most!\n Feel like Adidas? Just type it and we will find it for you!\n So just use swipe left, and start building!"}
+        </Paragraph>  
     </View>
   );
 }});
@@ -52,5 +56,12 @@ activityIndicator: {
   justifyContent: 'center',
   alignItems: 'center',
   height: 80
+},
+paragraph:{
+  fontWeight:'bold',
+  justifyContent: 'center',
+  alignItems: 'center',
+  textAlign: 'center',
+  fontFamily:'Ariel'
 }
 })

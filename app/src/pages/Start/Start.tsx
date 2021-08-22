@@ -24,7 +24,7 @@ const Start=observer(({route,navigation}:Props)=>{
 
     return (
       <View style={styles.continer}>
-          <Title text={"Dress Me Up!"}/>
+          <Title text={"Build Your Sets!"}/>
           <CompletedSets  completed={setStore.completedSets}/>
             <ItemTabNavigator>
               <TabNavigator.Screen 
@@ -40,23 +40,33 @@ const Start=observer(({route,navigation}:Props)=>{
                   }}   
               />
               <TabNavigator.Screen 
-                name="Pants" 
+                name="PantsList" 
                 component={PantsList}
+                options={{
+                  title: 'Choose Your Pants!',
+                  headerTitleStyle:{ textAlign: 'center'},
+                  tabBarLabel: 'Shoe',
+                  tabBarIcon: ({size,color}) => (
+                    <Icon name="shoe-prints" size={size} color={color}/>
+                  ),
+                }}   
               />
               <TabNavigator.Screen 
-                name="Shirt" 
+                name="ShirtList" 
                 component={ShirtList}
                 options={{
-                  tabBarLabel: 'Shirts',
-                  tabBarIcon: ({size,color}) => (
-                    <Icon name="tshirt" size={size} color={color}/>
-                  ),
-                }}
+                    title: 'Choose Your Shirt!',
+                    headerTitleStyle:{ textAlign: 'center'},
+                    tabBarLabel: 'Shirt',
+                    tabBarIcon: ({size,color}) => (
+                      <Icon name="tshirt" size={size} color={color}/>
+                    ),
+                  }}   
               />
               </ItemTabNavigator>  
       </View>
     );
-  }
+  });
 
 export default Start;
 const styles = StyleSheet.create({
