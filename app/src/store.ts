@@ -17,8 +17,9 @@ interface Set{
 }
 class SetStore{
     completedSets: number= 0
+    currentSet:Set 
     sets:Array<Set> = []
-    rootStore
+    rootStore: RootStore
     constructor(rootStore:RootStore){
         makeAutoObservable(this,{rootStore : false});
         this.rootStore = rootStore;
@@ -29,8 +30,17 @@ class SetStore{
     deleteCompletedSet(){
         this.completedSets -= 1
     }
-    addSet(set:Set){
-        this.sets.push(set)
+    addSet(currentSet:Set ){
+        this.sets.push(currentSet)
+    }
+    addShirt(id:string){
+        this.currentSet.shirt = id;
+    }
+    addPants(id:string){
+        this.currentSet.pants = id;
+    }
+    addShoes(id:string){
+        this.currentSet.shoes = id;
     }
     
 }
@@ -46,7 +56,7 @@ class DataStore{
     shoes:  Array<ResponseObject> = []
     pants:  Array<ResponseObject> = []
     shirts: Array<ResponseObject> = []
-    rootStore
+    rootStore: RootStore
     constructor(rootStore:RootStore){
         makeAutoObservable(this,{rootStore : false});
         this.rootStore = rootStore;
