@@ -31,6 +31,8 @@ class SetStore{
     completedSets: number= 0
     currentSet:Set 
     sets:Array<Set> = []
+    startTime:Date
+    endTime:Date
     rootStore: RootStore
     constructor(rootStore:RootStore){
         makeAutoObservable(this,{rootStore : false});
@@ -71,6 +73,11 @@ class SetStore{
     }
     addShoesSize(size:string){
         this.currentSet.shoes.size = size;
+    }
+    HowLongForSet(){
+        var diff =(this.endTime.getTime() - this.startTime.getTime()) / 1000;
+        diff /= 60;
+        return Math.abs(Math.round(diff));
     }
     
 }
