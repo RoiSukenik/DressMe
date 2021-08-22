@@ -17,6 +17,13 @@ type TabNavigatorParams ={
 type DrawerNavigatorParams ={
     Home:undefined;
     Builder:undefined;
+    Success:undefined;
     
 }
-export type {ResponseObject, TabNavigatorParams, DrawerNavigatorParams}
+
+type StackNavigatorParams ={
+    Main:undefined;
+    Success:undefined;
+}
+
+export type {ResponseObject, TabNavigatorParams, DrawerNavigatorParams,StackNavigatorParams}

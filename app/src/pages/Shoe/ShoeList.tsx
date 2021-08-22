@@ -36,7 +36,7 @@ const ShoeList = observer(({route,navigation}:Props) => {
     return (
         <View>
             <Input
-                placeholder="Search Item Here!..."
+                placeholder="Search Shoes Here!..."
                 onChangeText={value=>setSearch(value)}
             />
             <ScrollView>

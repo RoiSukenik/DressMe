@@ -12,11 +12,14 @@ const TabNavigator = createBottomTabNavigator<TabNavigatorParams>();
 
 const ItemTabNavigator = ({children }:Props) =>{
 
+    const {Navigator} = TabNavigator;
+
+
     return(
         <>
-            <TabNavigator.Navigator initialRouteName={'ShoeList'}>
+            <Navigator initialRouteName={'ShoeList'}>
                 {children}
-            </TabNavigator.Navigator>
+            </Navigator>
         </>
     );
 }

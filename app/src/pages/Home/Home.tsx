@@ -5,12 +5,14 @@ import React, { useContext } from 'react'
 import { ActivityIndicator, StyleSheet, View } from 'react-native'
 import { Icon } from 'react-native-elements';
 import { Paragraph } from 'react-native-paper';
-import { PantsList, ShirtList, ShoeList } from '..';
 import { RootStoreContext } from '../../../App';
 import { CompletedSets } from '../../components';
 import { Title } from '../../components/Title';
 import { DrawerNavigatorParams } from '../../interfaces';
 import { ItemTabNavigator, TabNavigator } from '../../navigations';
+import { PantsList } from '../Pants';
+import { ShirtList } from '../Shirt';
+import { ShoeList } from '../Shoe';
 
 type HomeScreenRouteProp = RouteProp<DrawerNavigatorParams,'Home'>;
 type HomeScreenNavigationProp = DrawerNavigationProp<DrawerNavigatorParams,'Home'>;

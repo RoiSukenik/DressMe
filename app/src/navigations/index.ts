@@ -1,3 +1,4 @@
 export *  from "./ItemNavigator";
-export * from "./RootDrawerNavigator";
+export * from "./DrawerNavigator";
+export * from "./RootStackNavigatior";
 

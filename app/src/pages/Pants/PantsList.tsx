@@ -19,24 +19,35 @@ type Props = {
 
 const PantsList = observer(({route,navigation}:Props) => {
 
-    let {shirts}  = useContext(RootStoreContext).dataStore;
-    const [filteredPantss,setFilteredPantss] = useState([]);
+    let {dataStore,setStore}  = useContext(RootStoreContext);
+    let {pants} = dataStore;
+    let {addPantsId,addPantsColor,addPantsSize} = setStore;
+
+    const [filteredPants,setFilteredPants] = useState([]);
     const [search,setSearch] = useState('');
     
     useEffect(() => {
-        let filtered = Filter(search,shirts)
-        setFilteredPantss(filtered);
+        let filtered = Filter(search,pants)
+        setFilteredPants(filtered);
     }, [search])
 
     return (
         <View>
             <Input
-                placeholder="Search Item Here!..."
+                placeholder="Search Pants Here!..."
                 onChangeText={value=>setSearch(value)}
             />
             <ScrollView>
                 <List.AccordionGroup>
-                    {filteredPantss.map((shirt)=> (<ItemSelection Id={shirt.id} Brand={shirt.brand} Colors={shirt.colors} Sizes={shirt.sizes} Name={shirt.name}/>))}
+                    {filteredPants.map((pants)=> (<ItemSelection 
+                        Id={pants.id} 
+                        Brand={pants.brand} 
+                        Colors={pants.colors} 
+                        Sizes={pants.sizes} 
+                        Name={pants.name}
+                        SaveId={addPantsId} 
+                        SaveColor={addPantsColor} 
+                        SaveSize={addPantsSize}/>))}
                 </List.AccordionGroup> 
             </ScrollView>
         </View>

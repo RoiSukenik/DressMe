@@ -1,14 +1,16 @@
 import React ,{useContext}from 'react';
-import { ActivityIndicator, StyleSheet, View} from 'react-native';
+import { StyleSheet, View} from 'react-native';
 import { ItemTabNavigator, TabNavigator } from '../../navigations';
 import {   observer } from 'mobx-react';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { RootStoreContext } from '../../../App';
-import { PantsList, ShirtList, ShoeList } from '..';
 import { CompletedSets, Title } from '../../components';
 import { RouteProp } from '@react-navigation/native';
 import { DrawerNavigatorParams } from '../../interfaces';
 import { DrawerNavigationProp } from '@react-navigation/drawer';
+import { ShoeList } from '../Shoe';
+import { PantsList } from '../Pants';
+import { ShirtList } from '../Shirt';
 
 
 type BuilderScreenRouteProp = RouteProp<DrawerNavigatorParams,'Builder'>;

@@ -2,11 +2,11 @@ import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import { DrawerNavigatorParams } from '../interfaces';
 
-export const RootDrawerNav = createDrawerNavigator<DrawerNavigatorParams>();
+export const DrawerNav = createDrawerNavigator<DrawerNavigatorParams>();
 
-const RootDrawerNavigator = ({children})=>{
+const DrawerNavigator = ({children})=>{
 
-    const {Navigator} = RootDrawerNav;
+    const {Navigator} = DrawerNav;
 
     return(
         <>
@@ -18,4 +18,4 @@ const RootDrawerNavigator = ({children})=>{
     
 }
 
-export default RootDrawerNavigator
+export default DrawerNavigator
