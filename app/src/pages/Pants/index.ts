@@ -1,1 +1,3 @@
-export {default as Pants} from './Pants'
+import PantsList from './PantsList'
+
+export {PantsList}

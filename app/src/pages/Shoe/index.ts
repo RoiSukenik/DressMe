@@ -1,3 +1,3 @@
+import ShoeList from "./ShoeList";
 
-export {default as ShoeList} from "./ShoeList";
-
+export {ShoeList}

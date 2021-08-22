@@ -14,7 +14,7 @@ const CompletedSets:React.FC<Props> = ({completed}) => {
     )
 }
 
-export default CompletedSets
+export default CompletedSets;
 
 const styles = StyleSheet.create({
     container:{

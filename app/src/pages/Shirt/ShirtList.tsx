@@ -1,8 +1,8 @@
 import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
 import { RouteProp } from '@react-navigation/native';
-import { observer } from 'mobx-react'
-import React, { useContext, useEffect, useState } from 'react'
-import { ScrollView, StyleSheet, View } from 'react-native'
+import { observer } from 'mobx-react';
+import React, { useEffect, useState,useContext } from 'react'
+import { ScrollView, StyleSheet, Text, View } from 'react-native'
 import { Input } from 'react-native-elements';
 import { List } from 'react-native-paper';
 import { RootStoreContext } from '../../../App';
@@ -10,23 +10,23 @@ import { ItemSelection } from '../../components';
 import { TabNavigatorParams } from '../../interfaces';
 import { Filter } from '../../utils';
 
-type ShoeListScreenRouteProp = RouteProp<TabNavigatorParams,'ShoeList'>;
-type ShoeListScreenNavigationProp = BottomTabNavigationProp<TabNavigatorParams,'ShoeList'>;
+
+type ShirtListScreenRouteProp = RouteProp<TabNavigatorParams,'ShirtList'>;
+type ShirtListScreenNavigationProp = BottomTabNavigationProp<TabNavigatorParams,'ShirtList'>;
 type Props = {
-    route: ShoeListScreenRouteProp;
-    navigation: ShoeListScreenNavigationProp;
+    route: ShirtListScreenRouteProp;
+    navigation: ShirtListScreenNavigationProp;
 };
 
+const ShirtList = observer(({route,navigation}:Props) => {
 
-const ShoeList = observer(({route,navigation}:Props) => {
-    
-    let {shoes}  = useContext(RootStoreContext).dataStore;
-    const [filteredShoes,setFilteredShoes] = useState([]);
+    let {shirts}  = useContext(RootStoreContext).dataStore;
+    const [filteredShirts,setFilteredShirts] = useState([]);
     const [search,setSearch] = useState('');
     
     useEffect(() => {
-        let filtered = Filter(search,shoes)
-        setFilteredShoes(filtered);
+        let filtered = Filter(search,shirts)
+        setFilteredShirts(filtered);
     }, [search])
 
     return (
@@ -37,13 +37,13 @@ const ShoeList = observer(({route,navigation}:Props) => {
             />
             <ScrollView>
                 <List.AccordionGroup>
-                    {filteredShoes.map((shoe)=> (<ItemSelection Id={shoe.id} Brand={shoe.brand} Colors={shoe.colors} Sizes={shoe.sizes} Name={shoe.name}/>))}
+                    {filteredShirts.map((shirt)=> (<ItemSelection Id={shirt.id} Brand={shirt.brand} Colors={shirt.colors} Sizes={shirt.sizes} Name={shirt.name}/>))}
                 </List.AccordionGroup> 
             </ScrollView>
         </View>
     )
 })
 
-export default ShoeList
+export default ShirtList
 
 const styles = StyleSheet.create({})

@@ -1,3 +1,4 @@
+
 interface ResponseObject{
     id: number;
     type: string;
@@ -8,9 +9,14 @@ interface ResponseObject{
 }
 
 type TabNavigatorParams ={
-    ShoeList:ResponseObject,
-    Shirt:ResponseObject,
-    Pants:ResponseObject
+    ShoeList:ResponseObject;
+    ShirtList:ResponseObject;
+    PantsList:ResponseObject;
 }
 
-export type {ResponseObject, TabNavigatorParams}
+type DrawerNavigatorParams ={
+    Home:undefined;
+    Start:undefined;
+    
+}
+export type {ResponseObject, TabNavigatorParams, DrawerNavigatorParams}
