@@ -31,8 +31,8 @@ class SetStore{
     completedSets: number= 0
     currentSet:Set 
     sets:Array<Set> = []
-    startTime:Date
-    endTime:Date
+    startTime:number
+    endTime:number
     rootStore: RootStore
     constructor(rootStore:RootStore){
         makeAutoObservable(this,{rootStore : false});
@@ -47,37 +47,20 @@ class SetStore{
     addSet(currentSet:Set ){
         this.sets.push(currentSet)
     }
-    addShirtId(id:string){
+    addShirt(id:string,color:string,size:string){
         this.currentSet.shirt.id = id;
-    }
-    addShirtColor(color:string){
         this.currentSet.shirt.color = color;
-    }
-    addShirtSize(size:string){
         this.currentSet.shirt.size = size;
     }
-    addPantsId(id:string){
+    addPants(id:string,color:string,size:string){
         this.currentSet.pants.id = id;
-    }
-    addPantsColor(color:string){
         this.currentSet.pants.color = color;
-    }
-    addPantsSize(size:string){
         this.currentSet.pants.size = size;
     }
-    addShoesId(id:string){
+    addShoe(id:string,color:string,size:string){
         this.currentSet.shoes.id = id;
-    }
-    addShoesColor(color:string){
         this.currentSet.shoes.color = color;
-    }
-    addShoesSize(size:string){
         this.currentSet.shoes.size = size;
-    }
-    HowLongForSet(){
-        var diff =(this.endTime.getTime() - this.startTime.getTime()) / 1000;
-        diff /= 60;
-        return Math.abs(Math.round(diff));
     }
     
 }

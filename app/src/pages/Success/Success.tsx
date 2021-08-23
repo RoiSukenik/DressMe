@@ -7,7 +7,9 @@ import { RootStoreContext } from '../../../App'
 const Success = () => {
 
     let {setStore}  = useContext(RootStoreContext);
-    const {sets} =setStore 
+    let {sets,endTime,startTime} =setStore
+    endTime = Date.now(); 
+    const finished = endTime-startTime;
     const onShare = async () => {
         try {
           const result = await Share.share({
@@ -16,15 +18,13 @@ const Success = () => {
           });
           if (result.action === Share.sharedAction) {
             if (result.activityType) {
-              // shared with activity type of result.activityType
-            } else {
-              // shared
-            }
+                console.log("shared")
+            } 
           } else if (result.action === Share.dismissedAction) {
-            // dismissed
+            console.log("dismissed")
           }
         } catch (error) {
-          
+          console.warn(error)
         }
       };
       
@@ -33,6 +33,7 @@ const Success = () => {
             <Image source={require('https://source.unsplash.com/random/50x50')} style={styles.image}/>
             <Title>Success!</Title>
             <Subheading>You Have Completed A Set!</Subheading>
+            <Paragraph>It took you {finished} seconds to choose!</Paragraph>
             <Paragraph>Feel Like Sharing it?</Paragraph>
             <Button mode={'outlined'} icon={"share"} onPress={onShare}>Share!</Button>
         </View>

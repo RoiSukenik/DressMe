@@ -22,10 +22,10 @@ const ShoeList = observer(({route,navigation}:Props) => {
     
     let {dataStore,setStore}  = useContext(RootStoreContext);
     let {shoes} = dataStore;
-    let {addShoesId,addShoesColor,addShoesSize} = setStore;
+    let {addShoe, startTime} = setStore;
     const [filteredShoes,setFilteredShoes] = useState([]);
     const [search,setSearch] = useState('');
-
+    startTime= Date.now()
 
 
     useEffect(() => {
@@ -47,9 +47,7 @@ const ShoeList = observer(({route,navigation}:Props) => {
                                                     Colors={shoe.colors} 
                                                     Sizes={shoe.sizes} 
                                                     Name={shoe.name} 
-                                                    SaveId={addShoesId} 
-                                                    SaveColor={addShoesColor} 
-                                                    SaveSize={addShoesSize}/>))}
+                                                    SaveToSet={addShoe}/>))}
                 </List.AccordionGroup> 
             </ScrollView>
         </View>

@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { StyleSheet, View } from 'react-native'
 import { List } from 'react-native-paper'
 import { RootStoreContext } from '../../../App'
+import { AddDialog } from '../Dialog'
 
 
 type Props = {
@@ -11,25 +12,26 @@ type Props = {
     Colors:Array<string>,
     Sizes:Array<number>,
     Name:string,
-    SaveId:Function;
-    SaveColor:Function;
-    SaveSize:Function;
+    SaveToSet:Function;
+
     
 
 }
 
-const ItemSelection:React.FC<Props> = observer(({Id,Brand,Colors, Sizes , Name,SaveId,SaveColor,SaveSize}) => {
+const ItemSelection:React.FC<Props> = observer(({Id,Brand,Colors, Sizes , Name,SaveToSet}) => {
     
     const [expanded,setExpanded] = useState(false)
     const [expandedColors,setExpandedColors] = useState(false)
     const [expandedSizes,setExpandedSizes] = useState(false)
+
+    const [choosenColor,setChoosenColor] = useState('');
+    const [choosenSize,setChoosenSize] = useState('');
 
    return (
             <List.Accordion
             title={Name}
             expanded={expanded}
             onPress={()=>{
-                SaveId(Id);
                 setExpanded(!expanded)
             }}
             id={Id}
@@ -44,7 +46,7 @@ const ItemSelection:React.FC<Props> = observer(({Id,Brand,Colors, Sizes , Name,S
                 >
                 {
                     Colors.map((color,index)=>(
-                        <List.Subheader  key={index}  onPress={()=>{SaveColor(color);}}>
+                        <List.Subheader  key={index}  onPress={()=>{setChoosenColor(color);}}>
                            {color} 
                         </List.Subheader>
                     ))
@@ -58,13 +60,16 @@ const ItemSelection:React.FC<Props> = observer(({Id,Brand,Colors, Sizes , Name,S
                 >
                 {
                     Sizes.map((size,index)=>(
-                        <List.Subheader  key={index} onPress={()=>{SaveSize(size.toString());}}>
+                        <List.Subheader  key={index} onPress={()=>{setChoosenSize(size.toString());}}>
                             {size}
                         </List.Subheader>
                     ))
                 }
                 </List.Accordion>
             </List.AccordionGroup>
+            <List.Subheader onPress={()=>{
+                <AddDialog show={true} Id={Id} choosenColor={choosenColor} choosenSize={choosenSize} SaveToSet={SaveToSet}/>
+            }}>Click Me To Add To Set!</List.Subheader>
            </List.Accordion>
     )
 })
