@@ -21,7 +21,7 @@ const PantsList = observer(({route,navigation}:Props) => {
 
     let {dataStore,setStore}  = useContext(RootStoreContext);
     let {pants} = dataStore;
-    let {addPantsId,addPantsColor,addPantsSize} = setStore;
+    let {addPants} = setStore;
 
     const [filteredPants,setFilteredPants] = useState([]);
     const [search,setSearch] = useState('');
@@ -45,9 +45,7 @@ const PantsList = observer(({route,navigation}:Props) => {
                         Colors={pants.colors} 
                         Sizes={pants.sizes} 
                         Name={pants.name}
-                        SaveId={addPantsId} 
-                        SaveColor={addPantsColor} 
-                        SaveSize={addPantsSize}/>))}
+                        SaveToSet={addPants}/>))}
                 </List.AccordionGroup> 
             </ScrollView>
         </View>

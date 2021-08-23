@@ -22,7 +22,7 @@ const ShirtList = observer(({route,navigation}:Props) => {
 
     let {dataStore,setStore}  = useContext(RootStoreContext);
     let {shirts} = dataStore;
-    let {addShirtId,addShirtColor,addShirtSize} = setStore;
+    let {addShirt} = setStore;
     const [filteredShirts,setFilteredShirts] = useState([]);
     const [search,setSearch] = useState('');
     
@@ -44,9 +44,8 @@ const ShirtList = observer(({route,navigation}:Props) => {
                         Colors={shirt.colors} 
                         Sizes={shirt.sizes} 
                         Name={shirt.name}
-                        SaveId={addShirtId} 
-                        SaveColor={addShirtColor} 
-                        SaveSize={addShirtSize}/>))}
+                        SaveToSet={addShirt}
+                        />))}
                 </List.AccordionGroup> 
             </ScrollView>
         </View>

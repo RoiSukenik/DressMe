@@ -29,7 +29,23 @@ interface Set{
 }
 class SetStore{
     completedSets: number= 0
-    currentSet:Set 
+    currentSet:Set ={
+        pants:{
+            id:"",
+            size:"",
+            color:"",
+        },
+        shirt:{
+            id:"",
+            size:"",
+            color:"",
+        },
+        shoes:{
+            id:"",
+            size:"",
+            color:"",
+        }
+    } 
     sets:Array<Set> = []
     startTime:number
     endTime:number
@@ -44,8 +60,8 @@ class SetStore{
     deleteCompletedSet(){
         this.completedSets -= 1
     }
-    addSet(currentSet:Set ){
-        this.sets.push(currentSet)
+    addSet(){
+        this.sets.push(this.currentSet)
     }
     addShirt(id:string,color:string,size:string){
         this.currentSet.shirt.id = id;
