@@ -10,7 +10,7 @@ export function Filter(searchTerm:string,data:Array<ResponseObject>){
                         obj.colors.includes(searchTerm) ||
                         sizes.includes(searchTerm)
     })
-    if(searchTerm.length<2){
+    if(searchTerm.length<=2){
         return filtered.slice(0,4);
     }
     return filtered;

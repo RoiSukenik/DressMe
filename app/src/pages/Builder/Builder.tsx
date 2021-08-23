@@ -11,6 +11,7 @@ import { DrawerNavigationProp } from '@react-navigation/drawer';
 import { ShoeList } from '../Shoe';
 import { PantsList } from '../Pants';
 import { ShirtList } from '../Shirt';
+import { Image } from 'react-native-elements';
 
 
 type BuilderScreenRouteProp = RouteProp<DrawerNavigatorParams,'Builder'>;
@@ -49,7 +50,7 @@ const Builder=observer(({route,navigation}:Props)=>{
                   headerTitleStyle:{ textAlign: 'center'},
                   tabBarLabel: 'Shoe',
                   tabBarIcon: ({size,color}) => (
-                    <Icon name="shoe-prints" size={size} color={color}/>
+                    <Image source={require('../../assets/icons/pantsIcon.png')}/>
                   ),
                 }}   
               />
