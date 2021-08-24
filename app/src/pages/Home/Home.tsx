@@ -3,7 +3,7 @@ import { RouteProp } from '@react-navigation/native';
 import { observer } from 'mobx-react';
 import React, { useContext } from 'react'
 import { ActivityIndicator, StyleSheet, View } from 'react-native'
-import { Icon } from 'react-native-elements';
+import  Icon  from 'react-native-vector-icons/FontAwesome5';
 import { Paragraph } from 'react-native-paper';
 import { RootStoreContext } from '../../../App';
 import { CompletedSets } from '../../components';
@@ -59,7 +59,7 @@ const Home = observer(({route,navigation,loading}:Props) => {
                 options={{
                   title: 'Choose Your Pants!',
                   headerTitleStyle:{ textAlign: 'center'},
-                  tabBarLabel: 'Shoe',
+                  tabBarLabel: 'Pants',
                   tabBarIcon: ({size,color}) => (
                     <Icon name="shoe-prints" size={size} color={color}/>
                   ),

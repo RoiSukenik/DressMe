@@ -49,9 +49,9 @@ const Builder=observer(({route,navigation}:Props)=>{
                   title: 'Choose Your Pants!',
                   headerTitleStyle:{ textAlign: 'center'},
                   tabBarLabel: 'Shoe',
-                  tabBarIcon: ({size,color}) => (
-                    <Image source={require('../../assets/icons/pantsIcon.png')}/>
-                  ),
+                  // tabBarIcon: ({size,color}) => (
+                  //   //<Image source={require('../../assets/icons/pantsIcon.png')}/>
+                  // ),
                 }}   
               />
               <TabNavigator.Screen 
